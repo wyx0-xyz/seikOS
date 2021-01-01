@@ -22,6 +22,7 @@
 #define VGA_WIDTH 80
 #define VGA_HEIGHT 25
 
+void vga_put_char(char c);
 void vga_print(const char *message, int color);
 void vga_clear(void);
 

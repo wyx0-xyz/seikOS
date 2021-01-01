@@ -1,16 +1,24 @@
 #include "vga.h"
 
 int position = 0;
+int color = VGA_WHITE;
 char *vga_buffer = (char *)VGA_ADDRESS;
 
-void vga_print(const char *message, int color)
+void vga_put_char(char c)
+{
+     vga_buffer[position++] = c;
+     vga_buffer[position++] = color;
+}
+
+void vga_print(const char *message, int _color)
 {
      int i = 0;
+     color = _color;
 
      while (message[i] != '\0')
      {
-          vga_buffer[position++] = message[i++];
-          vga_buffer[position++] = color;
+          write_vga(message[i]);
+          i++;
      }
 }
 
