@@ -1,5 +1,6 @@
 # SeikOS
 An operating system in C.
+You can see the advancement of the project by following the [TodoList](#TodoList)
 
 ## TodoList
 - [x] VGA text mode
