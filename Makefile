@@ -22,7 +22,7 @@ LDFLAGS 	:= -ffreestanding \
 dev: clean build run
 
 run:
-	qemu-system-i386 -kernel bin/seikos.bin
+	qemu-system-i386 -kernel bin/seikos.bin -serial stdio
 
 build: $(OBJECTS) linker
 
