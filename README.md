@@ -6,7 +6,7 @@ An operating system in C.
 - [x] Serial Ports communication
 - [ ] gdt
 - [ ] idt
-- [ ] keyboard input
+- [ ] keyboard input
 - [ ] gui
 - And more...
 
