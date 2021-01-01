@@ -17,7 +17,7 @@ void vga_print(const char *message, int _color)
 
      while (message[i] != '\0')
      {
-          write_vga(message[i]);
+          vga_put_char(message[i]);
           i++;
      }
 }
