@@ -3,6 +3,7 @@ AS 		= nasm
 
 ASMFILES  := $(shell find src/ -type f -name '*.asm')
 CFILES    := $(shell find src/ -type f -name '*.c')
+HEADERS   := $(shell find src/ -type f -name '*.h')
 
 OBJECTS   = $(CFILES:.c=.o) $(ASMFILES:.asm=.o)
 
@@ -34,6 +35,9 @@ build: $(OBJECTS) linker
 
 linker:
 	$(CC) -T src/linker.ld -o bin/seikos.bin $(OBJECTS) $(LDFLAGS)
+
+format:
+	clang-format -i $(CFILES) $(HEADERS)
 
 clean:
 	$(RM) $(OBJECTS)
